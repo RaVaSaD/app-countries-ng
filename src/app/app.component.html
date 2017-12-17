@@ -3,6 +3,9 @@
   <h1>
     Bienvenido a mi apliación de pruebas de {{ title }}!
   </h1>
+  <div class="nav">
+    <p-tabMenu [model]="items" [activeItem]="items[0]"></p-tabMenu>
+  </div>
   <router-outlet></router-outlet>
 </div>
 

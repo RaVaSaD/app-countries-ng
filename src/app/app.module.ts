@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-// Import HttpClientModule from @angular/common/http
 import {HttpClientModule} from '@angular/common/http';
 
+import {MenuModule, TabMenuModule} from 'primeng/primeng';
+import { TabViewModule } from 'primeng/components/tabview/tabview';
+import { CodeHighlighterModule } from 'primeng/components/codehighlighter/codehighlighter';
 
 import { AppComponent } from './app.component';
 import { ListadoComponent } from './listado/listado.component';
@@ -16,8 +19,13 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MenuModule,
+    TabMenuModule,
+    TabViewModule,
+    CodeHighlighterModule
   ],
   providers: [ListadoService],
   bootstrap: [AppComponent]
