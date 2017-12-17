@@ -11,8 +11,9 @@ import { Observable } from 'rxjs/Observable';
 export class ListadoComponent implements OnInit {
 
   title: string;
-  paises: Array<string> = [];
-  resultsPaises$: Observable<string>;
+  paises: any;
+  resultsPaises: Array<any>;
+  private errorMessage: any = '';
 
   constructor(private _listadoService: ListadoService) { }
 
@@ -20,7 +21,18 @@ export class ListadoComponent implements OnInit {
 
     this.paises = this._listadoService.getPaisesArray();
     this.title = this._listadoService.getServiceName();
-    this.resultsPaises$ = this._listadoService.getPaisesAPI();
+
+    this._listadoService.getPaisesAPI().subscribe(
+      data => {
+        this.resultsPaises = data.body;
+        console.log(data);
+      },
+      error => {
+        this.errorMessage = <any>error;
+        console.log(error);
+      }
+    );
+
   }
 
 }

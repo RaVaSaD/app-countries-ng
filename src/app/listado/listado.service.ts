@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ListadoService {
+  private data: Object;
+  private errorMessage: any = '';
 
   constructor(private http: HttpClient) { }
 
@@ -18,11 +21,8 @@ export class ListadoService {
     return this.paises;
   }
 
-  getPaisesAPI() {
-    this.http.get('https://restcountries.eu/rest/v2/lang/es').subscribe(data => {
-      // Read the result field from the JSON response.
-      return data;
-    });
+  getPaisesAPI(): Observable<any> {
+    return this.http.get<any>('https://restcountries.eu/rest/v2/lang/es', {observe: 'response'});
   }
 
 }
