@@ -7,6 +7,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ListadoComponent } from './listado/listado.component';
 import { ListadoService} from './listado/listado.service';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ListadoService} from './listado/listado.service';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [ListadoService],
   bootstrap: [AppComponent]
