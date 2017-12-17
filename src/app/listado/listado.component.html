@@ -1,0 +1,22 @@
+<h2>
+  LISTADO DE PAISES
+</h2>
+<p>{{title}}</p>
+
+<h2>
+    Paises Estáticos de Array
+</h2>
+<ul>
+  <li *ngFor="let pais of paises">
+    {{ pais }}
+  </li>
+</ul>
+
+<h2>
+    Paises con petición GET
+</h2>
+<ul>
+  <li *ngFor="let result of results">
+    <strong>Nombre: </strong>{{ result.name }} <strong>Capital: </strong>{{ result.capital }}
+  </li>
+</ul>
