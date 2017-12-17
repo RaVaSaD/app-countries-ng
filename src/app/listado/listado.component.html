@@ -17,6 +17,6 @@
 </h2>
 <ul>
   <li *ngFor="let result of resultsPaises">
-    <strong>Nombre: </strong>{{ result.name }} <strong>Capital: </strong>{{ result.capital }} <strong>Población: </strong>{{ result.population }}
+    <strong>Nombre: </strong>{{ result.name }} <strong>Capital: </strong>{{ result.capital }} <strong>Población: </strong>{{ result.population | number }}
   </li>
 </ul>
